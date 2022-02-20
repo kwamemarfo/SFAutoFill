@@ -48,7 +48,8 @@ public class Service{
 	private WebDriver driver;
 
 	public WebDriver getPage() {
-		return webDriver.getPage();
+		driver = webDriver.getPage();
+		return driver;
 	}
 
 	public OpenPage login() {

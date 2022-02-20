@@ -28,15 +28,13 @@ public class FDMDeadlines {
 				break;
 			}
 		}
-		
 		if (deadlineDate.compareTo(formatedDates.get(0)) == 0) {
 			System.out.println("\n\nNo deadline established for submission!!! Default deadline below ");
 		}
-		
 		System.out.println("\n\n" + "Next Deadline Date: " + deadlineDate);
 	}
 	
-	public List<String> deadlineDates() {
+	private List<String> deadlineDates() {
 		List<String> fdmDeadlineDates = new ArrayList<>();
 		
 		fdmDeadlineDates.add("09:00 Monday 31 January 2022");
