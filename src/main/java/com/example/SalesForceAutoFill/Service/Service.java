@@ -2,7 +2,6 @@ package com.example.SalesForceAutoFill.Service;
 
 import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
@@ -45,17 +44,11 @@ public class Service{
 	
 	@Autowired
 	private FDMDeadlines fdmDeadlines;
-	
-	@Value("${webPage}")
-	private String pageUrl;
 
 	private WebDriver driver;
 
 	public WebDriver getPage() {
-		driver = webDriver.getDriver();
-		driver.manage().window().maximize();
-		driver.get(pageUrl);
-		return driver;
+		return webDriver.getPage();
 	}
 
 	public OpenPage login() {
@@ -68,32 +61,25 @@ public class Service{
 
 	public OpenPage selectCalendarView() {
 		return calendarViewSelect.selectCalendarView(driver);
-
 	}
 
 	public Boolean fillInTimeSheetPage() {
-		return timeSheetPage.fillInPage(driver);
-		
+		return timeSheetPage.fillInPage(driver);	
 	}
 
 	public void switchFrame(int frameId) {
 		pageManipulate.switchFrame(driver, frameId);
-
 	}
 
 	public OpenPage logout(Boolean wasTimeSheetFilledIn) {
-		return logoutPage.logout(driver, wasTimeSheetFilledIn);
-		
+		return logoutPage.logout(driver, wasTimeSheetFilledIn);	
 	}
 
 	public void closeAll() {
-		driver.quit();
-		
+		driver.quit();	
 	}
 
 	public void FDMDeadlines() {
-		fdmDeadlines.getDeadline();
-		
+		fdmDeadlines.getDeadline();	
 	}
-
 }
