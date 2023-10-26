@@ -23,12 +23,12 @@ public class LoginPage {
 	
 
 	public OpenPage login(WebDriver driver) {
-		WebDriverWait loginPage = new WebDriverWait(driver, 10);
-		WebElement loginPage1 = loginPage.until(ExpectedConditions
-				.visibilityOfElementLocated(usernameBy));
-		loginPage1.sendKeys(username);
-		
-		System.out.println("<---   Waiting for User to Log-in   --->");
+//		WebDriverWait loginPage = new WebDriverWait(driver, 50);
+//		WebElement loginPage1 = loginPage.until(ExpectedConditions
+//				.visibilityOfElementLocated(usernameBy));
+//		loginPage1.sendKeys(username);
+//		
+//		System.out.println("<---   Waiting for User to Log-in   --->");
 		this.waitForLogin(driver);
 		
 		return new OpenPage();
