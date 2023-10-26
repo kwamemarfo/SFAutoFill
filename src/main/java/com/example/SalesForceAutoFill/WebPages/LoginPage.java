@@ -28,7 +28,6 @@ public class LoginPage {
 //				.visibilityOfElementLocated(usernameBy));
 //		loginPage1.sendKeys(username);
 //
-//
 //		
 //		System.out.println("<---   Waiting for User to Log-in   --->");
 		this.waitForLogin(driver);
